@@ -243,6 +243,10 @@
     transition: all 0.3s ease;
 
 }
+.btn-order:hover {
+    background: linear-gradient(135deg, #ffe98a, #8da5ff);
+    box-shadow: 0 8px 20px rgba(7, 5, 5, 0.74);
+}
 
 
 @media (max-width: 768px) {
