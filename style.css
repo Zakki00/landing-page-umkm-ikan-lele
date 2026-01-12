@@ -1,6 +1,8 @@
 :root {
     --font-title: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --font-title: "Playfair Display", serif;
+        --font-body: "Inter", system-ui, sans-serif;
 }
 
 * {
@@ -10,55 +12,79 @@
     font-family: var(--font-body);
     scroll-behavior: smooth;
 }
-
+/* NAVBAR WRAPPER */
 .navbar {
     position: fixed;
-    left: 25%;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 50%;
+    height: 64px;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+
     border-radius: 100px;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 1000;
 
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-.logo {
+/* INNER LAYOUT */
+.navbar-inner {
+    height: 100%;
+    padding: 0 32px;
 
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
     display: flex;
     align-items: center;
-    height: 100%;
-    padding: 0 16px;
+    justify-content: space-between;
 }
 
-.navbar ul {
+/* LOGO */
+.logo {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+/* LINKS */
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 28px;
 }
 
-.nav-link {
-    background-color: #ad3232;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.navbar ul li a {
+.nav-links a {
+    position: relative;
     text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    color: #e5e5e5;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    padding: 6px 0;
+    transition: color 0.25s ease;
 }
 
-.navbar ul li a:hover {
-    color: #b5b81e;
+/* HOVER EFFECT */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #ffb703;
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffb703;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .home {
@@ -258,28 +284,23 @@
     justify-content: center;
     align-items: flex-end;
 }
-.about-text {
-   
-   
+.about-text {   
     width: 80%;
     height: 80%;
 }
-.about-container h2,
-.about-container p {
-    position: relative;
-    z-index: 1;
-    color: #2b2b2b;
-}
+
 .about-container h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     padding-bottom: 14px;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    color: #2b2b2bc7;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.253);
 }
 
 .about-container p {
     line-height: 1.9;
     margin-bottom: 18px;
+    color: #2b2b2b;
 }
 
 .about-container::after {
@@ -290,11 +311,110 @@
     z-index: 0;
 }
 
-
-
+/* ================= CONTACT SECTION ================= */
 .contact {
-    height: 100vh;
-    width: 100%;
-    background: url('image/background2.png') no-repeat center;
+    padding: 100px 20px;
+    background-image: url('image/background4.svg');
+    display: flex;
+    justify-content: end;
+    align-items: end;
     background-size: cover;
+   
+}
+/* Card utama */
+.contact-card {
+    width: 100%;
+    max-width: 820px;
+    padding: 48px 40px;
+    
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Judul */
+.contact-card h2 {
+    font-family: var(--font-title, 'Segoe UI', sans-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #eeeeee;
+}
+
+/* Deskripsi */
+.contact-card p {
+    font-size: 1rem;
+    color: #ebebeb;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* Wrapper card kecil */
+.contact-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Card kecil */
+.contact-item {
+    background-color: #f5f6fa;
+    border-radius: 18px 0 18px 18px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+   
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Icon */
+.contact-item img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Text icon */
+.contact-item span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2b2b2b;
+}
+
+/* Hover effect */
+.contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.74);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .contact-items {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 36px 24px;
+    }
+}
+.contact-item i {
+    font-size: 36px;
+    color: #2b59ff;
+}
+
+/* Warna khas tiap platform */
+.contact-item:nth-child(1) i {
+    color: #25D366;
+    /* WhatsApp */
+}
+
+.contact-item:nth-child(2) i {
+    color: #E1306C;
+    /* Instagram */
+}
+
+.contact-item:nth-child(3) i {
+    color: #EA4335;
+    /* Gmail */
 }
