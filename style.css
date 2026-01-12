@@ -229,6 +229,7 @@
 }
 
 .menu-judul h2 {
+    
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
@@ -248,11 +249,13 @@
 }
 
 .menu-content {
+   
     position: relative;
     width: 20%;
-    height: 65%;
+    height: 70%;
     background-color: #2f2f2f;
     margin: 16px;
+    margin-top: 80px;
     border-radius: 50px 0 50px 0px;
     padding-top: 120px;
     /* ruang untuk gambar */
@@ -275,6 +278,7 @@
 }
 
 .menu-text {
+    height: 95%;
     padding: 26px 26px 32px;
     gap: 14px;
     color: #ffffff;
@@ -299,11 +303,20 @@
     color: #cfcfcf;
     max-width: 95%;
 }
+.menu-text .harga {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffdd57;
+    margin-top: auto;
+}
 
 .btn-order {
-    margin-top: 10px;
-
-    padding: 10px 22px;
+    margin-top: auto;
+    position: relative;
+    display: inline-block;
+    bottom: 1px;
+    padding: 10px 22px; 
     background: linear-gradient(135deg, #2b59ff, #e9bf07);
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -360,6 +373,7 @@
     }
 
     .menu-content {
+        
         width: 90%;
         margin-bottom: 80px;
         padding-top: 90px;
@@ -456,7 +470,10 @@
 }
 
 @media (max-width: 1024px) {
-
+    .about {
+        height: auto;
+        /* penting: biar tidak nabrak about */
+    }
     .about-container {
         /* container lebih lebar untuk mobile */
         height: auto;
@@ -482,7 +499,10 @@
 }
 
 @media (max-width: 768px) {
-
+.about {
+        height: auto;
+        /* penting: biar tidak nabrak about */
+    }
     .about-container {
         width: 90%;
         /* container lebih lebar untuk mobile */
@@ -499,8 +519,8 @@
     }
 
     .about-text {
-        margin-top: 15vh;
-        width: 100%;
+        margin-top: 20vh;
+        width: auto;
         height: auto;
         text-align: center;
         /* teks lebih rapi di tengah */
@@ -585,6 +605,13 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.contact-items a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
 /* Icon */
 .contact-item img {
     width: 40px;
