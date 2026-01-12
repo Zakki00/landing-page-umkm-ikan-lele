@@ -248,19 +248,79 @@
     box-shadow: 0 8px 20px rgba(7, 5, 5, 0.74);
 }
 
+@media (max-width: 1024px) {
 
-@media (max-width: 768px) {
+    .menu {
+        height: auto;
+        /* penting: biar tidak nabrak about */
+       
+    }
+
+    .list-menu {
+        height: auto;
+        padding: 80px 20px 60px;
+        border-radius: 60px 60px 0 0;
+    }
+
     .menu-content {
-        width: 100%;
+        width: 45%;
+        height: auto;
         padding-top: 100px;
     }
 
     .menu-image {
-        width: 180px;
+        width: 260px;
     }
 }
+@media (max-width: 768px) {
 
+    .menu-judul h2 {
+        font-size: 2rem;
+    }
 
+    .list-menu {
+        height: auto;
+        flex-direction: column;
+        padding: 100px 16px 60px;
+        border-radius: 48px 48px 0 0;
+    }
+
+    .menu-content {
+        width: 90%;
+        margin-bottom: 80px;
+        padding-top: 90px;
+        border-radius: 36px 0 36px 0;
+    }
+
+    .menu-image {
+        width: 220px;
+    }
+
+    .menu-text h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .menu-text p {
+        font-size: 0.88rem;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+
+    .menu-image {
+        width: 180px;
+    }
+
+    .menu-content {
+        padding-top: 80px;
+    }
+
+    .btn-order {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 .about {
     height: 100vh;
